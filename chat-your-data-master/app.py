@@ -6,7 +6,7 @@ import pickle
 from query_data import get_chain
 from threading import Lock
 
-with open("vectorstore.pkl", "rb") as f:
+with open("./repo-20230321/finetune-repo\chat-your-data-master/vectorstore_CS.pkl", "rb") as f:
     vectorstore = pickle.load(f)
 
 
@@ -17,7 +17,7 @@ def set_openai_api_key(api_key: str):
     if api_key:
         os.environ["OPENAI_API_KEY"] = api_key
         chain = get_chain(vectorstore)
-        os.environ["OPENAI_API_KEY"] = ""
+        os.environ["OPENAI_API_KEY"] =
         return chain
 
 class ChatWrapper:
